@@ -1,48 +1,43 @@
 url: https://adatar-do.github.io/sfDR/
-
 template:
   bootstrap: 5
-
 lang: es
-
-
 authors:
   Daniel E. de la Rosa:
     href: http://dnldelarosa.com
   Adatar:
-    html: <div><img src="https://raw.githubusercontent.com/adatar-do/adatar-do.github.io/main/logotipo.png" alt="Adatar" height="20"> <span style="font-weight:900; margin:10px;">Adatar</span></div>
+    html: <div><img src="https://raw.githubusercontent.com/adatar-do/adatar-do.github.io/main/logotipo.png"
+      alt="Adatar" height="20"> <span style="font-weight:900; margin:10px;">Adatar</span></div>
     href: http://adatar.do
   sidebar:
-    roles: [aut, cph]
-
-
+    roles:
+    - aut
+    - cph
 reference:
-  - title: Development Regions
-    desc: Functions and datasets for working with development regions in the Dominican Republic.
-    contents:
-      - DR_REG
-      - dr_region
+- title: Development Regions
+  desc: Functions and datasets for working with development regions in the Dominican
+    Republic.
+  contents:
+  - DR_REG
+  - dr_region
+- title: Provinces
+  desc: Functions and datasets for handling provinces in the Dominican Republic.
+  contents:
+  - DR_PROV
+  - dr_province
+- title: Municipalities
+  desc: Functions and datasets for dealing with municipalities in the Dominican Republic.
+  contents:
+  - DR_MUN
+  - dr_municipality
+- title: Municipal Districts
+  desc: Functions and datasets for managing municipal districts in the Dominican Republic.
+  contents:
+  - DR_DM
+  - dr_municipal_district
+- title: Sections
+  desc: Functions and datasets for working with sections in the Dominican Republic.
+  contents:
+  - DR_SEC
+  - dr_section
 
-  - title: Provinces
-    desc: Functions and datasets for handling provinces in the Dominican Republic.
-    contents:
-      - DR_PROV
-      - dr_province
-
-  - title: Municipalities
-    desc: Functions and datasets for dealing with municipalities in the Dominican Republic.
-    contents:
-      - DR_MUN
-      - dr_municipality
-
-  - title: Municipal Districts
-    desc: Functions and datasets for managing municipal districts in the Dominican Republic.
-    contents:
-      - DR_DM
-      - dr_municipal_district
-
-  - title: Sections
-    desc: Functions and datasets for working with sections in the Dominican Republic.
-    contents:
-      - DR_SEC
-      - dr_section
