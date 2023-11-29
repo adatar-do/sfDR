@@ -1,0 +1,23 @@
+Package: sfDR
+Title: Simple Features for Dominican Republic Administrative Boundaries
+Version: 0.1.0
+Authors@R: 
+    c(person(given = "Daniel E.",
+           family = "de la Rosa",
+           role = c("aut", "cre"),
+           email = "me@dnldelarosa.com"),
+    person(given = "Adatar",
+           role = "cph"))
+Description: The sfDR package provides a comprehensive collection of simple 
+  feature (sf) objects for the administrative boundaries of the Dominican Republic, 
+  including provinces, municipalities, municipal districts, and sections. These 
+  datasets are ideal for geospatial analysis, mapping, and data visualization, 
+  providing accurate and up-to-date information as per the `División Territorial 2021`. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Depends: 
+    R (>= 2.10)
+LazyData: true
+LazyDataCompression: xz

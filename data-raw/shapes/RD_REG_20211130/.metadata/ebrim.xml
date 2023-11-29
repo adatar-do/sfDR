@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- pycsw 2.4.0 -->
+<csw:GetRecordByIdResponse xmlns:csw="http://www.opengis.net/cat/csw/2.0.2" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dct="http://purl.org/dc/terms/" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml" xmlns:ows="http://www.opengis.net/ows" xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd">
+  <rim:ExtrinsicObject xsi:schemaLocation="http://www.opengis.net/cat/wrs/1.0 http://schemas.opengis.net/csw/2.0.2/profiles/ebrim/1.0/csw-ebrim.xsd" id="1c8817de-7dfe-11ec-873e-0242ac120005" lid="1c8817de-7dfe-11ec-873e-0242ac120005" objectType="dataset" status="urn:oasis:names:tc:ebxml-regrep:StatusType:Submitted">
+    <rim:VersionInfo versionName=""/>
+    <rim:ExternalIdentifier id="1c8817de-7dfe-11ec-873e-0242ac120005" identificationScheme="foo" registryObject="None" value="1c8817de-7dfe-11ec-873e-0242ac120005"/>
+    <rim:Name>
+      <rim:LocalizedString value="Regiones de Planificación"/>
+    </rim:Name>
+    <rim:Description>
+      <rim:LocalizedString value="Capa cartográfica correspondiente a la división de la República Dominicana en regiones de planificación (10), acorde al decreto no. 710-04 de fecha 30 de julio de 2004."/>
+    </rim:Description>
+    <rim:Slot slotType="urn:ogc:def:dataType:ISO-19107:2003:GM_Envelope">
+      <rim:ValueList>
+        <rim:Value>
+          <ows:BoundingBox crs="urn:x-ogc:def:crs:EPSG:6.11:4326" dimensions="2">
+            <ows:LowerCorner>17.465624 -72.034838</ows:LowerCorner>
+            <ows:UpperCorner>19.942023 -68.317424</ows:UpperCorner>
+          </ows:BoundingBox>
+        </rim:Value>
+      </rim:ValueList>
+    </rim:Slot>
+    <rim:Slot name="http://purl.org/dc/elements/1.1/subject">
+      <rim:ValueList>
+        <rim:Value>PLANIFICACION</rim:Value>
+        <rim:Value>REGIONES</rim:Value>
+        <rim:Value>REPUBLICA DOMINICANA</rim:Value>
+      </rim:ValueList>
+    </rim:Slot>
+  </rim:ExtrinsicObject>
+</csw:GetRecordByIdResponse>

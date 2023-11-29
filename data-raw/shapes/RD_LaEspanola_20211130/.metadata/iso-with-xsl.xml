@@ -1,0 +1,717 @@
+<?xml-stylesheet type="text/xsl" href="http://iderd.ign.gob.do:80/static/metadataxsl/metadata.xsl"?><gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gco="http://www.isotc211.org/2005/gco" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://www.isotc211.org/2005/gmd/gmd.xsd">
+   <gmd:fileIdentifier>
+     <gco:CharacterString>22b1e3be-7f7b-11ec-957e-0242ac120005</gco:CharacterString>
+   </gmd:fileIdentifier>
+   <gmd:language>
+     <gco:CharacterString>spa</gco:CharacterString>
+   </gmd:language>
+   <gmd:characterSet>
+     <gmd:MD_CharacterSetCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</gmd:MD_CharacterSetCode>
+   </gmd:characterSet>
+   <gmd:hierarchyLevel>
+    <gmd:MD_ScopeCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
+   </gmd:hierarchyLevel>
+
+
+   
+   <gmd:contact>
+     <gmd:CI_ResponsibleParty>
+       <gmd:individualName gco:nilReason="missing">
+         
+       </gmd:individualName>
+       <gmd:organisationName >
+          <gco:CharacterString>Instituto Geográfico Nacional &quot;José Joaquín Hungría Morell&quot; (IGN-JJHM)</gco:CharacterString> 
+       </gmd:organisationName>
+       <gmd:positionName gco:nilReason="missing">
+         
+       </gmd:positionName>
+       <gmd:contactInfo>
+         <gmd:CI_Contact>
+           <gmd:phone>
+             <gmd:CI_Telephone>
+               <gmd:voice >
+                 <gco:CharacterString>809-221-8836 ext. 1202</gco:CharacterString>
+               </gmd:voice>
+               <gmd:facsimile gco:nilReason="missing">
+                 
+               </gmd:facsimile>
+             </gmd:CI_Telephone>
+           </gmd:phone>
+           <gmd:address>
+             <gmd:CI_Address>
+               <gmd:deliveryPoint gco:nilReason="missing">
+                 
+               </gmd:deliveryPoint>
+               <gmd:city >
+                 <gco:CharacterString>Santo Domingo</gco:CharacterString>
+               </gmd:city>
+               <gmd:administrativeArea gco:nilReason="missing">
+                 
+               </gmd:administrativeArea>
+               <gmd:postalCode gco:nilReason="missing">
+                 
+               </gmd:postalCode>
+               <gmd:country >
+                 <gco:CharacterString>DOM</gco:CharacterString>
+               </gmd:country>
+               <gmd:electronicMailAddress >
+                 <gco:CharacterString>cartografia@ign.gob.do</gco:CharacterString>
+               </gmd:electronicMailAddress>
+             </gmd:CI_Address>
+           </gmd:address>
+           
+         </gmd:CI_Contact>
+       </gmd:contactInfo>
+       <gmd:role>
+         <gmd:CI_RoleCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode>
+       </gmd:role>
+     </gmd:CI_ResponsibleParty>
+   </gmd:contact>
+   
+
+   
+   <gmd:contact>
+     <gmd:CI_ResponsibleParty>
+       <gmd:individualName gco:nilReason="missing">
+         
+       </gmd:individualName>
+       <gmd:organisationName >
+          <gco:CharacterString>Instituto Geográfico Nacional &quot;José Joaquín Hungría Morell&quot; (IGN-JJHM)</gco:CharacterString> 
+       </gmd:organisationName>
+       <gmd:positionName gco:nilReason="missing">
+         
+       </gmd:positionName>
+       <gmd:contactInfo>
+         <gmd:CI_Contact>
+           <gmd:phone>
+             <gmd:CI_Telephone>
+               <gmd:voice >
+                 <gco:CharacterString>809-221-8836 ext. 1202</gco:CharacterString>
+               </gmd:voice>
+               <gmd:facsimile gco:nilReason="missing">
+                 
+               </gmd:facsimile>
+             </gmd:CI_Telephone>
+           </gmd:phone>
+           <gmd:address>
+             <gmd:CI_Address>
+               <gmd:deliveryPoint gco:nilReason="missing">
+                 
+               </gmd:deliveryPoint>
+               <gmd:city >
+                 <gco:CharacterString>Santo Domingo</gco:CharacterString>
+               </gmd:city>
+               <gmd:administrativeArea gco:nilReason="missing">
+                 
+               </gmd:administrativeArea>
+               <gmd:postalCode gco:nilReason="missing">
+                 
+               </gmd:postalCode>
+               <gmd:country >
+                 <gco:CharacterString>DOM</gco:CharacterString>
+               </gmd:country>
+               <gmd:electronicMailAddress >
+                 <gco:CharacterString>cartografia@ign.gob.do</gco:CharacterString>
+               </gmd:electronicMailAddress>
+             </gmd:CI_Address>
+           </gmd:address>
+           
+         </gmd:CI_Contact>
+       </gmd:contactInfo>
+       <gmd:role>
+         <gmd:CI_RoleCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="author">author</gmd:CI_RoleCode>
+       </gmd:role>
+     </gmd:CI_ResponsibleParty>
+   </gmd:contact>
+   
+
+
+   <gmd:dateStamp>
+     <gco:DateTime>2022-01-27T14:17:33Z</gco:DateTime>
+   </gmd:dateStamp>
+   <gmd:metadataStandardName>
+     <gco:CharacterString>ISO 19115:2003 - Geographic information - Metadata</gco:CharacterString>
+   </gmd:metadataStandardName>
+   <gmd:metadataStandardVersion>
+     <gco:CharacterString>ISO 19115:2003</gco:CharacterString>
+   </gmd:metadataStandardVersion>
+   <gmd:spatialRepresentationInfo />
+   <gmd:referenceSystemInfo>
+     <gmd:MD_ReferenceSystem>
+       <gmd:referenceSystemIdentifier>
+         <gmd:RS_Identifier>
+           <gmd:code>
+             <gco:CharacterString>4326</gco:CharacterString>
+           </gmd:code>
+           <gmd:codeSpace>
+             <gco:CharacterString>EPSG</gco:CharacterString>
+           </gmd:codeSpace>
+           <gmd:version>
+             <gco:CharacterString>6.11</gco:CharacterString>
+           </gmd:version>
+         </gmd:RS_Identifier>
+       </gmd:referenceSystemIdentifier>
+     </gmd:MD_ReferenceSystem>
+   </gmd:referenceSystemInfo>
+
+   <gmd:identificationInfo>
+     <gmd:MD_DataIdentification>
+       <gmd:citation>
+         <gmd:CI_Citation>
+           
+           <gmd:name>
+             <gco:CharacterString>geonode:RD_LaEspanola_20211130</gco:CharacterString>
+           </gmd:name>
+           
+           <gmd:title>
+             <gco:CharacterString>Isla de La Española</gco:CharacterString>
+           </gmd:title>
+           <gmd:date>
+             <gmd:CI_Date>
+               <gmd:date>
+                 <gco:DateTime>2020-09-02T09:12:00Z</gco:DateTime>
+               </gmd:date>
+               <gmd:dateType>
+                 <gmd:CI_DateTypeCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
+               </gmd:dateType>
+             </gmd:CI_Date>
+           </gmd:date>
+           <gmd:edition >
+                 <gco:CharacterString>1.1</gco:CharacterString>
+           </gmd:edition>
+           <gmd:presentationForm>
+             <gmd:CI_PresentationFormCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode" codeListValue="mapDigital">mapDigital</gmd:CI_PresentationFormCode>
+           </gmd:presentationForm>
+         </gmd:CI_Citation>
+       </gmd:citation>
+       <gmd:abstract>
+         <gco:CharacterString>Capa cartográfica correspondiente al contorno de la isla de La Española, que muestra la división de países existentes ya que la República Dominicana y la República de Haití comparten el territorio de la isla.</gco:CharacterString>
+       </gmd:abstract>
+       <gmd:purpose gco:nilReason="missing">
+             
+       </gmd:purpose>
+       <gmd:status>
+         <gmd:MD_ProgressCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ProgressCode" codeListValue="completed">completed</gmd:MD_ProgressCode>
+       </gmd:status>
+
+       
+       <gmd:pointOfContact>
+         <gmd:CI_ResponsibleParty>
+           <gmd:individualName gco:nilReason="missing">
+             
+           </gmd:individualName>
+           <gmd:organisationName >
+              <gco:CharacterString>Instituto Geográfico Nacional &quot;José Joaquín Hungría Morell&quot; (IGN-JJHM)</gco:CharacterString> 
+           </gmd:organisationName>
+           <gmd:positionName gco:nilReason="missing">
+             
+           </gmd:positionName>
+           <gmd:contactInfo>
+             <gmd:CI_Contact>
+               <gmd:phone>
+                 <gmd:CI_Telephone>
+                   <gmd:voice >
+                     <gco:CharacterString>809-221-8836 ext. 1202</gco:CharacterString>
+                   </gmd:voice>
+                   <gmd:facsimile gco:nilReason="missing">
+                     
+                   </gmd:facsimile>
+                 </gmd:CI_Telephone>
+               </gmd:phone>
+               <gmd:address>
+                 <gmd:CI_Address>
+                   <gmd:deliveryPoint gco:nilReason="missing">
+                     
+                   </gmd:deliveryPoint>
+                   <gmd:city >
+                     <gco:CharacterString>Santo Domingo</gco:CharacterString>
+                   </gmd:city>
+                   <gmd:administrativeArea gco:nilReason="missing">
+                     
+                   </gmd:administrativeArea>
+                   <gmd:postalCode gco:nilReason="missing">
+                     
+                   </gmd:postalCode>
+                   <gmd:country >
+                     <gco:CharacterString>DOM</gco:CharacterString>
+                   </gmd:country>
+                   <gmd:electronicMailAddress >
+                     <gco:CharacterString>cartografia@ign.gob.do</gco:CharacterString>
+                   </gmd:electronicMailAddress>
+                 </gmd:CI_Address>
+               </gmd:address>
+               
+             </gmd:CI_Contact>
+           </gmd:contactInfo>
+           <gmd:role>
+             <gmd:CI_RoleCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
+           </gmd:role>
+         </gmd:CI_ResponsibleParty>
+       </gmd:pointOfContact>
+       
+
+       
+       <gmd:resourceMaintenance>
+         <gmd:MD_MaintenanceInformation>
+           <gmd:maintenanceAndUpdateFrequency>
+             <gmd:MD_MaintenanceFrequencyCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode" codeListValue="asNeeded">asNeeded</gmd:MD_MaintenanceFrequencyCode>
+           </gmd:maintenanceAndUpdateFrequency>
+         </gmd:MD_MaintenanceInformation>
+       </gmd:resourceMaintenance>
+       
+       <gmd:graphicOverview>
+         <gmd:MD_BrowseGraphic>
+           <gmd:fileName>
+             <gco:CharacterString>http://iderd.ign.gob.do:80/uploaded/thumbs/layer-22b1e3be-7f7b-11ec-957e-0242ac120005-thumb.png</gco:CharacterString>
+           </gmd:fileName>
+           <gmd:fileDescription>
+             <gco:CharacterString>Thumbnail for 'Isla de La Española'</gco:CharacterString>
+           </gmd:fileDescription>
+           <gmd:fileType>
+             <gco:CharacterString>image/png</gco:CharacterString>
+           </gmd:fileType>
+         </gmd:MD_BrowseGraphic>
+       </gmd:graphicOverview>
+       <gmd:resourceFormat>
+         <gmd:MD_Format>
+           <gmd:name>
+             
+             <gco:CharacterString>ESRI Shapefile</gco:CharacterString>
+             
+           </gmd:name>
+           <gmd:version>
+             <gco:CharacterString>1.0</gco:CharacterString>
+           </gmd:version>
+         </gmd:MD_Format>
+       </gmd:resourceFormat>
+       
+       <gmd:descriptiveKeywords>
+         <gmd:MD_Keywords>
+           
+           <gmd:keyword>
+             <gco:CharacterString>DOMINGO</gco:CharacterString>
+           </gmd:keyword>
+           
+           <gmd:keyword>
+             <gco:CharacterString>ESPAÑOLA</gco:CharacterString>
+           </gmd:keyword>
+           
+           <gmd:keyword>
+             <gco:CharacterString>ISLAS</gco:CharacterString>
+           </gmd:keyword>
+           
+           <gmd:keyword>
+             <gco:CharacterString>LA ESPAÑOLA</gco:CharacterString>
+           </gmd:keyword>
+           
+           <gmd:keyword>
+             <gco:CharacterString>QUISQUEYA</gco:CharacterString>
+           </gmd:keyword>
+           
+           <gmd:keyword>
+             <gco:CharacterString>REPUBLICA DOMINICANA</gco:CharacterString>
+           </gmd:keyword>
+           
+           <gmd:keyword>
+             <gco:CharacterString>SANTO</gco:CharacterString>
+           </gmd:keyword>
+           
+           <gmd:type>
+              <gmd:MD_KeywordTypeCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
+            </gmd:type>
+         </gmd:MD_Keywords>
+       </gmd:descriptiveKeywords>
+       
+       
+       <gmd:descriptiveKeywords>
+         <gmd:MD_Keywords>
+           <gmd:keyword>
+             <gco:CharacterString>Dominican Republic</gco:CharacterString>
+           </gmd:keyword>
+           <gmd:type>
+              <gmd:MD_KeywordTypeCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="place">place</gmd:MD_KeywordTypeCode>
+            </gmd:type>
+         </gmd:MD_Keywords>
+       </gmd:descriptiveKeywords>
+       
+       
+       
+       <gmd:resourceConstraints>
+         <gmd:MD_LegalConstraints>
+           <gmd:useConstraints>
+             <gmd:MD_RestrictionCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue="license">license</gmd:MD_RestrictionCode>
+           </gmd:useConstraints>
+           <gmd:otherConstraints>
+             <gco:CharacterString>Not Specified: The original author did not specify a license.</gco:CharacterString>
+           </gmd:otherConstraints>
+         </gmd:MD_LegalConstraints>
+       </gmd:resourceConstraints>
+       
+       <gmd:resourceConstraints>
+         <gmd:MD_LegalConstraints>
+           <gmd:useConstraints>
+              <gmd:MD_RestrictionCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode" codeListValue=""></gmd:MD_RestrictionCode>
+           </gmd:useConstraints>
+           <gmd:otherConstraints>
+             <gco:CharacterString></gco:CharacterString>
+           </gmd:otherConstraints>
+         </gmd:MD_LegalConstraints>
+       </gmd:resourceConstraints>
+       <gmd:spatialRepresentationType>
+         <gmd:MD_SpatialRepresentationTypeCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="vector">vector</gmd:MD_SpatialRepresentationTypeCode>
+       </gmd:spatialRepresentationType>
+       <gmd:language>
+         <gco:CharacterString>spa</gco:CharacterString>
+       </gmd:language>
+       <gmd:characterSet>
+         <gmd:MD_CharacterSetCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8">utf8</gmd:MD_CharacterSetCode>
+       </gmd:characterSet>
+       <gmd:topicCategory gco:nilReason="missing">
+         
+       </gmd:topicCategory>
+       <gmd:extent>
+         <gmd:EX_Extent>
+           <gmd:geographicElement>
+             <gmd:EX_GeographicBoundingBox>
+               <gmd:westBoundLongitude>
+                 <gco:Decimal>-74.5353871613</gco:Decimal>
+               </gmd:westBoundLongitude>
+               <gmd:eastBoundLongitude>
+                 <gco:Decimal>-68.316612881</gco:Decimal>
+               </gmd:eastBoundLongitude>
+               <gmd:southBoundLatitude>
+                 <gco:Decimal>17.4134151523</gco:Decimal>
+               </gmd:southBoundLatitude>
+               <gmd:northBoundLatitude>
+                 <gco:Decimal>20.1296921507</gco:Decimal>
+               </gmd:northBoundLatitude>
+             </gmd:EX_GeographicBoundingBox>
+           </gmd:geographicElement>
+         </gmd:EX_Extent>
+       </gmd:extent>
+       
+       <gmd:supplementalInformation>
+         <gco:CharacterString>No se provee información</gco:CharacterString>
+       </gmd:supplementalInformation>
+     </gmd:MD_DataIdentification>
+   </gmd:identificationInfo>
+
+   <gmd:contentInfo>
+     
+   </gmd:contentInfo>
+   <gmd:distributionInfo>
+     <gmd:MD_Distribution>
+       <gmd:transferOptions>
+         <gmd:MD_DigitalTransferOptions>
+           <gmd:onLine>
+             <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                   <gmd:URL>http://iderd.ign.gob.do:80</gmd:URL>
+               </gmd:linkage>
+               <gmd:protocol>
+                 <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+               </gmd:protocol>
+               <gmd:description>
+                 <gco:CharacterString>Online link to the 'Isla de La Española' description on GeoNode</gco:CharacterString>
+               </gmd:description>
+             </gmd:CI_OnlineResource>
+           </gmd:onLine>
+           
+           <gmd:onLine>
+             <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                 <gmd:URL>http://iderd.ign.gob.do:80/download/158</gmd:URL>
+               </gmd:linkage>
+               <gmd:protocol>
+                 <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+               </gmd:protocol>
+               <gmd:name>
+                 <gco:CharacterString>.zip</gco:CharacterString>
+               </gmd:name>
+               <gmd:description>
+                 <gco:CharacterString>Isla de La Española (Original Dataset Format)</gco:CharacterString>
+               </gmd:description>
+             </gmd:CI_OnlineResource>
+           </gmd:onLine>
+           
+           <gmd:onLine>
+             <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                 <gmd:URL>http://iderd.ign.gob.do:80/geoserver/ows?layers=geonode%3ARD_LaEspanola_20211130&amp;service=WMS&amp;format=image%2Fjpeg&amp;request=GetMap&amp;height=550&amp;width=550&amp;bbox=-79563.468750000000000%2C1933557.000000000000000%2C571428.437500000000000%2C2225979.750000000000000&amp;srs=EPSG%3A32619</gmd:URL>
+               </gmd:linkage>
+               <gmd:protocol>
+                 <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+               </gmd:protocol>
+               <gmd:name>
+                 <gco:CharacterString>.jpg</gco:CharacterString>
+               </gmd:name>
+               <gmd:description>
+                 <gco:CharacterString>Isla de La Española (JPEG Format)</gco:CharacterString>
+               </gmd:description>
+             </gmd:CI_OnlineResource>
+           </gmd:onLine>
+           
+           <gmd:onLine>
+             <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                 <gmd:URL>http://iderd.ign.gob.do:80/geoserver/ows?layers=geonode%3ARD_LaEspanola_20211130&amp;service=WMS&amp;format=application%2Fpdf&amp;request=GetMap&amp;height=550&amp;width=550&amp;bbox=-79563.468750000000000%2C1933557.000000000000000%2C571428.437500000000000%2C2225979.750000000000000&amp;srs=EPSG%3A32619</gmd:URL>
+               </gmd:linkage>
+               <gmd:protocol>
+                 <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+               </gmd:protocol>
+               <gmd:name>
+                 <gco:CharacterString>.pdf</gco:CharacterString>
+               </gmd:name>
+               <gmd:description>
+                 <gco:CharacterString>Isla de La Española (PDF Format)</gco:CharacterString>
+               </gmd:description>
+             </gmd:CI_OnlineResource>
+           </gmd:onLine>
+           
+           <gmd:onLine>
+             <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                 <gmd:URL>http://iderd.ign.gob.do:80/geoserver/ows?layers=geonode%3ARD_LaEspanola_20211130&amp;service=WMS&amp;format=image%2Fpng&amp;request=GetMap&amp;height=550&amp;width=550&amp;bbox=-79563.468750000000000%2C1933557.000000000000000%2C571428.437500000000000%2C2225979.750000000000000&amp;srs=EPSG%3A32619</gmd:URL>
+               </gmd:linkage>
+               <gmd:protocol>
+                 <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+               </gmd:protocol>
+               <gmd:name>
+                 <gco:CharacterString>.png</gco:CharacterString>
+               </gmd:name>
+               <gmd:description>
+                 <gco:CharacterString>Isla de La Española (PNG Format)</gco:CharacterString>
+               </gmd:description>
+             </gmd:CI_OnlineResource>
+           </gmd:onLine>
+           
+           <gmd:onLine>
+             <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                 <gmd:URL>http://iderd.ign.gob.do:80/geoserver/ows?outputFormat=SHAPE-ZIP&amp;service=WFS&amp;srs=EPSG%3A32619&amp;request=GetFeature&amp;format_options=charset%3AUTF-8&amp;typename=geonode%3ARD_LaEspanola_20211130&amp;version=1.0.0</gmd:URL>
+               </gmd:linkage>
+               <gmd:protocol>
+                 <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+               </gmd:protocol>
+               <gmd:name>
+                 <gco:CharacterString>.zip</gco:CharacterString>
+               </gmd:name>
+               <gmd:description>
+                 <gco:CharacterString>Isla de La Española (Zipped Shapefile Format)</gco:CharacterString>
+               </gmd:description>
+             </gmd:CI_OnlineResource>
+           </gmd:onLine>
+           
+           <gmd:onLine>
+             <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                 <gmd:URL>http://iderd.ign.gob.do:80/geoserver/ows?outputFormat=gml2&amp;service=WFS&amp;srs=EPSG%3A32619&amp;request=GetFeature&amp;typename=geonode%3ARD_LaEspanola_20211130&amp;version=1.0.0</gmd:URL>
+               </gmd:linkage>
+               <gmd:protocol>
+                 <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+               </gmd:protocol>
+               <gmd:name>
+                 <gco:CharacterString>.gml</gco:CharacterString>
+               </gmd:name>
+               <gmd:description>
+                 <gco:CharacterString>Isla de La Española (GML 2.0 Format)</gco:CharacterString>
+               </gmd:description>
+             </gmd:CI_OnlineResource>
+           </gmd:onLine>
+           
+           <gmd:onLine>
+             <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                 <gmd:URL>http://iderd.ign.gob.do:80/geoserver/ows?outputFormat=text%2Fxml%3B+subtype%3Dgml%2F3.1.1&amp;service=WFS&amp;srs=EPSG%3A32619&amp;request=GetFeature&amp;typename=geonode%3ARD_LaEspanola_20211130&amp;version=1.0.0</gmd:URL>
+               </gmd:linkage>
+               <gmd:protocol>
+                 <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+               </gmd:protocol>
+               <gmd:name>
+                 <gco:CharacterString>.gml</gco:CharacterString>
+               </gmd:name>
+               <gmd:description>
+                 <gco:CharacterString>Isla de La Española (GML 3.1.1 Format)</gco:CharacterString>
+               </gmd:description>
+             </gmd:CI_OnlineResource>
+           </gmd:onLine>
+           
+           <gmd:onLine>
+             <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                 <gmd:URL>http://iderd.ign.gob.do:80/geoserver/ows?outputFormat=csv&amp;service=WFS&amp;srs=EPSG%3A32619&amp;request=GetFeature&amp;typename=geonode%3ARD_LaEspanola_20211130&amp;version=1.0.0</gmd:URL>
+               </gmd:linkage>
+               <gmd:protocol>
+                 <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+               </gmd:protocol>
+               <gmd:name>
+                 <gco:CharacterString>.csv</gco:CharacterString>
+               </gmd:name>
+               <gmd:description>
+                 <gco:CharacterString>Isla de La Española (CSV Format)</gco:CharacterString>
+               </gmd:description>
+             </gmd:CI_OnlineResource>
+           </gmd:onLine>
+           
+           <gmd:onLine>
+             <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                 <gmd:URL>http://iderd.ign.gob.do:80/geoserver/ows?outputFormat=excel&amp;service=WFS&amp;srs=EPSG%3A32619&amp;request=GetFeature&amp;typename=geonode%3ARD_LaEspanola_20211130&amp;version=1.0.0</gmd:URL>
+               </gmd:linkage>
+               <gmd:protocol>
+                 <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+               </gmd:protocol>
+               <gmd:name>
+                 <gco:CharacterString>.excel</gco:CharacterString>
+               </gmd:name>
+               <gmd:description>
+                 <gco:CharacterString>Isla de La Española (Excel Format)</gco:CharacterString>
+               </gmd:description>
+             </gmd:CI_OnlineResource>
+           </gmd:onLine>
+           
+           <gmd:onLine>
+             <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                 <gmd:URL>http://iderd.ign.gob.do:80/geoserver/ows?srsName=EPSG%3A32619&amp;outputFormat=json&amp;service=WFS&amp;srs=EPSG%3A32619&amp;request=GetFeature&amp;typename=geonode%3ARD_LaEspanola_20211130&amp;version=1.0.0</gmd:URL>
+               </gmd:linkage>
+               <gmd:protocol>
+                 <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+               </gmd:protocol>
+               <gmd:name>
+                 <gco:CharacterString>.json</gco:CharacterString>
+               </gmd:name>
+               <gmd:description>
+                 <gco:CharacterString>Isla de La Española (GeoJSON Format)</gco:CharacterString>
+               </gmd:description>
+             </gmd:CI_OnlineResource>
+           </gmd:onLine>
+           
+           <gmd:onLine>
+             <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                 <gmd:URL>http://iderd.ign.gob.do:80/geoserver/ows?outputFormat=SHAPE-ZIP&amp;service=WFS&amp;srs=EPSG%3A32619&amp;request=GetFeature&amp;format_options=charset%3AUTF-8&amp;typename=geonode%3ARD_LaEspanola_20211130&amp;version=1.0.0</gmd:URL>
+               </gmd:linkage>
+               <gmd:protocol>
+                 <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+               </gmd:protocol>
+               <gmd:name>
+                 <gco:CharacterString>.zip</gco:CharacterString>
+               </gmd:name>
+               <gmd:description>
+                 <gco:CharacterString>Isla de La Española (Shapefile Comprimido Format)</gco:CharacterString>
+               </gmd:description>
+             </gmd:CI_OnlineResource>
+           </gmd:onLine>
+           
+           <gmd:onLine>
+             <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                 <gmd:URL>http://iderd.ign.gob.do:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image/png&amp;WIDTH=20&amp;HEIGHT=20&amp;LAYER=geonode:RD_LaEspanola_20211130&amp;STYLE=RD_LaEspanola_20211130&amp;legend_options=fontAntiAliasing:true;fontSize:12;forceLabels:on</gmd:URL>
+               </gmd:linkage>
+               <gmd:protocol>
+                 <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+               </gmd:protocol>
+               <gmd:name>
+                 <gco:CharacterString>.png</gco:CharacterString>
+               </gmd:name>
+               <gmd:description>
+                 <gco:CharacterString>Isla de La Española (Legend Format)</gco:CharacterString>
+               </gmd:description>
+             </gmd:CI_OnlineResource>
+           </gmd:onLine>
+           
+           <gmd:onLine>
+             <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                 <gmd:URL>http://iderd.ign.gob.do:80/geoserver/ows?layers=geonode:RD_LaEspanola_20211130&amp;crs=EPSG:4326&amp;service=WMS&amp;format=image/png8&amp;access_token=vx57aA3Rv1HUitT4BIfPnPOvjpIMMo&amp;request=GetMap&amp;height=180&amp;width=240&amp;version=1.1.1&amp;bbox=-74.5353871613,17.4134151523,-68.316612881,20.1296921507</gmd:URL>
+               </gmd:linkage>
+               <gmd:protocol>
+                 <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+               </gmd:protocol>
+               <gmd:name>
+                 <gco:CharacterString>.png</gco:CharacterString>
+               </gmd:name>
+               <gmd:description>
+                 <gco:CharacterString>Isla de La Española (Remote Thumbnail Format)</gco:CharacterString>
+               </gmd:description>
+             </gmd:CI_OnlineResource>
+           </gmd:onLine>
+           
+           <gmd:onLine>
+             <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                 <gmd:URL>http://iderd.ign.gob.do:80/uploaded/thumbs/layer-22b1e3be-7f7b-11ec-957e-0242ac120005-thumb.png</gmd:URL>
+               </gmd:linkage>
+               <gmd:protocol>
+                 <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+               </gmd:protocol>
+               <gmd:name>
+                 <gco:CharacterString>.png</gco:CharacterString>
+               </gmd:name>
+               <gmd:description>
+                 <gco:CharacterString>Isla de La Española (Thumbnail Format)</gco:CharacterString>
+               </gmd:description>
+             </gmd:CI_OnlineResource>
+           </gmd:onLine>
+           
+           
+           <gmd:onLine>
+             <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                 <gmd:URL>http://iderd.ign.gob.do:80/geoserver/ows</gmd:URL>
+               </gmd:linkage>
+               <gmd:protocol>
+                 <gco:CharacterString>OGC:WMS</gco:CharacterString>
+               </gmd:protocol>
+               <gmd:name>
+                 <gco:CharacterString>geonode:RD_LaEspanola_20211130</gco:CharacterString>
+               </gmd:name>
+               <gmd:description>
+                 <gco:CharacterString> Service - Provides Layer: Isla de La Española</gco:CharacterString>
+               </gmd:description>
+             </gmd:CI_OnlineResource>
+           </gmd:onLine>
+           
+           <gmd:onLine>
+             <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                 <gmd:URL>http://iderd.ign.gob.do:80/geoserver/ows</gmd:URL>
+               </gmd:linkage>
+               <gmd:protocol>
+                 <gco:CharacterString>OGC:WFS</gco:CharacterString>
+               </gmd:protocol>
+               <gmd:name>
+                 <gco:CharacterString>geonode:RD_LaEspanola_20211130</gco:CharacterString>
+               </gmd:name>
+               <gmd:description>
+                 <gco:CharacterString> Service - Provides Layer: Isla de La Española</gco:CharacterString>
+               </gmd:description>
+             </gmd:CI_OnlineResource>
+           </gmd:onLine>
+           
+         </gmd:MD_DigitalTransferOptions>
+       </gmd:transferOptions>
+     </gmd:MD_Distribution>
+   </gmd:distributionInfo>
+   <gmd:dataQualityInfo>
+     <gmd:DQ_DataQuality>
+       <gmd:scope>
+         <gmd:DQ_Scope>
+           <gmd:level>
+             <gmd:MD_ScopeCode codeSpace="ISOTC211/19115" codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
+           </gmd:level>
+         </gmd:DQ_Scope>
+       </gmd:scope>
+       <gmd:lineage>
+         <gmd:LI_Lineage>
+           <gmd:statement ><gco:CharacterString>Escala: 1:50,000
+
+Sistema de coordenadas proyectadas: WGS_1984_UTM_Zone_19N
+
+Capa cartográfica adquirida de la Dirección General de Ordenamiento y Desarrollo Territorial. Captada por DGODT del consultor en ordenamiento territorial Jorg Witte, del Ministerio de Medio Ambiente y Recursos Naturales, durante el desarrollo del proyecto de manejo de la Cuenca del Artibonito.  Corregida y actualizada a noviembre de 2021 por el Departamento de Producción Cartográfica de la Dirección de Cartografía del IGN-JJHM con imágenes libres de SAS.</gco:CharacterString></gmd:statement>
+         </gmd:LI_Lineage>
+       </gmd:lineage>
+     </gmd:DQ_DataQuality>
+   </gmd:dataQualityInfo>
+ </gmd:MD_Metadata>
