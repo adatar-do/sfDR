@@ -25,6 +25,7 @@ reference:
   contents:
   - DR_PROV
   - dr_province
+  - remesas_provincias
 - title: Municipalities
   desc: Functions and datasets for dealing with municipalities in the Dominican Republic.
   contents:
