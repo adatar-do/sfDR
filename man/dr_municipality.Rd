@@ -3,7 +3,7 @@
 \docType{data}
 \name{dr_municipality}
 \alias{dr_municipality}
-\title{Municipalities of the Dominican Republic}
+\title{Metadata for the "Municipalities of the Dominican Republic"}
 \format{
 \subsection{\code{dr_municipality}}{
 

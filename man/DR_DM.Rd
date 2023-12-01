@@ -3,7 +3,7 @@
 \docType{data}
 \name{DR_DM}
 \alias{DR_DM}
-\title{Municipal Districts of the Dominican Republic}
+\title{Simple features for the "Municipal Districts of the Dominican Republic"}
 \format{
 \subsection{\code{DR_DM}}{
 

@@ -3,7 +3,7 @@
 \docType{data}
 \name{DR_PROV}
 \alias{DR_PROV}
-\title{Provinces of the Dominican Republic}
+\title{Simple features for the "Provinces of the Dominican Republic"}
 \format{
 \subsection{\code{DR_PROV}}{
 

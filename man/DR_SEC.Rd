@@ -3,7 +3,7 @@
 \docType{data}
 \name{DR_SEC}
 \alias{DR_SEC}
-\title{Sections of the Dominican Republic}
+\title{Simple features for the "Sections of the Dominican Republic"}
 \format{
 \subsection{\code{DR_SEC}}{
 
