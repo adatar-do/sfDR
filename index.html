@@ -41,7 +41,7 @@
     
     <a class="navbar-brand me-2" href="index.html">sfDR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Cambiar la navegación">
@@ -79,7 +79,9 @@
 </h2>
 <p>You can install the development version of sfDR from r-universe with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'sfDR'</span>, repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'https://adatar-do.r-universe.dev'</span>, <span class="st">'https://cloud.r-project.org'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://adatar-do.github.io/sfDR/">'sfDR'</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'sfDR'</span>, repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'https://adatar-do.r-universe.dev'</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://dplyr.tidyverse.org" class="external-link">'dplyr'</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'dplyr'</span><span class="op">)</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://ggplot2.tidyverse.org" class="external-link">'ggplot2'</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'ggplot2'</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
@@ -87,9 +89,125 @@
 <p>This is a basic example showing how to use sfDR to plot a Dominican Republic province map:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://adatar-do.github.io/sfDR/">sfDR</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># Plotting the map of a specific province</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">DR_PROV</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">DR_PROV_SF</span> <span class="op">&lt;-</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu">st_as_sf</span><span class="op">(</span><span class="va">DR_PROV</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">DR_PROV_SF</span><span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-3-1.png" width="100%"></p>
+<p>Suppose you have a dataset showing the percentage distribution of remittances received in each province of the Dominican Republic for a specific year. To visualize this data using a graph with sfDR, you first need to combine the metadata with the simple features.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">DR_PROV_SF</span> <span class="op">&lt;-</span> <span class="va">DR_PROV_SF</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">left_join</span><span class="op">(</span><span class="va">dr_province</span>, by <span class="op">=</span> <span class="fu">join_by</span><span class="op">(</span><span class="va">PROV_ID</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">DR_PROV_SF</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">sf</span><span class="fu">::</span><span class="fu">st_drop_geometry</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;    PROV_ID PROV_CODE                  PROV_NAME</span></span>
+<span><span class="co">#&gt; 1       21        SC             San CristÃ³bal</span></span>
+<span><span class="co">#&gt; 2       14       MTS   MarÃ­a Trinidad SÃ¡nchez</span></span>
+<span><span class="co">#&gt; 3       17       PER                    Peravia</span></span>
+<span><span class="co">#&gt; 4       20       SAM                    SamanÃ¡</span></span>
+<span><span class="co">#&gt; 5       18        PP               Puerto Plata</span></span>
+<span><span class="co">#&gt; 6       11        LA              La Altagracia</span></span>
+<span><span class="co">#&gt; 7       07        EP               ElÃ­as PiÃ±a</span></span>
+<span><span class="co">#&gt; 8       10       IND              Independencia</span></span>
+<span><span class="co">#&gt; 9       16       PED                 Pedernales</span></span>
+<span><span class="co">#&gt; 10      03       BAH                    Baoruco</span></span>
+<span><span class="co">#&gt; 11      03       BAH                   Bahoruco</span></span>
+<span><span class="co">#&gt; 12      04       BAR                   Barahona</span></span>
+<span><span class="co">#&gt; 13      26       SRO        Santiago RodrÃ­guez</span></span>
+<span><span class="co">#&gt; 14      27       VAL                   Valverde</span></span>
+<span><span class="co">#&gt; 15      19       HMI           Hermanas Mirabal</span></span>
+<span><span class="co">#&gt; 16      19       SAL                    Salcedo</span></span>
+<span><span class="co">#&gt; 17      24       SRA          SÃ¡nchez RamÃ­rez</span></span>
+<span><span class="co">#&gt; 18      13        LV                    La Vega</span></span>
+<span><span class="co">#&gt; 19      28        MN            MonseÃ±or Nouel</span></span>
+<span><span class="co">#&gt; 20      31       SJO          San JosÃ© de Ocoa</span></span>
+<span><span class="co">#&gt; 21      22        SJ                   San Juan</span></span>
+<span><span class="co">#&gt; 22      22        SJ     San Juan de la Maguana</span></span>
+<span><span class="co">#&gt; 23      02       AZU                       Azua</span></span>
+<span><span class="co">#&gt; 24      25       SAN                   Santiago</span></span>
+<span><span class="co">#&gt; 25      25       SAN Santiago de los Caballeros</span></span>
+<span><span class="co">#&gt; 26      06       DUA                     Duarte</span></span>
+<span><span class="co">#&gt; 27      09       ESP                  Espaillat</span></span>
+<span><span class="co">#&gt; 28      29        MP                Monte Plata</span></span>
+<span><span class="co">#&gt; 29      30       HMA                 Hato Mayor</span></span>
+<span><span class="co">#&gt; 30      12        LR                  La Romana</span></span>
+<span><span class="co">#&gt; 31      23       SPM      San Pedro de MacorÃ­s</span></span>
+<span><span class="co">#&gt; 32      08        ES                   El Seibo</span></span>
+<span><span class="co">#&gt; 33      08        ES                   El Seybo</span></span>
+<span><span class="co">#&gt; 34      01        DN          Distrito Nacional</span></span>
+<span><span class="co">#&gt; 35      05       DAJ                   DajabÃ³n</span></span>
+<span><span class="co">#&gt; 36      32        SD              Santo Domingo</span></span>
+<span><span class="co">#&gt; 37      15        MC               Monte Cristi</span></span></code></pre></div>
+<p>The original simple features dataset only includes the PROV_ID variable. Additional variables are incorporated through the dr_province object.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span> <span class="va">datos</span> <span class="op">&lt;-</span> <span class="va">DR_PROV_SF</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">left_join</span><span class="op">(</span><span class="va">remesas_provincias</span>, by <span class="op">=</span> <span class="fu">join_by</span><span class="op">(</span><span class="st">'PROV_NAME'</span> <span class="op">==</span> <span class="st">'province'</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">datos</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">sf</span><span class="fu">::</span><span class="fu">st_drop_geometry</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt;    PROV_ID PROV_CODE                  PROV_NAME  percentage</span></span>
+<span><span class="co">#&gt; 1       21        SC             San CristÃ³bal          NA</span></span>
+<span><span class="co">#&gt; 2       14       MTS   MarÃ­a Trinidad SÃ¡nchez          NA</span></span>
+<span><span class="co">#&gt; 3       17       PER                    Peravia 0.005948295</span></span>
+<span><span class="co">#&gt; 4       20       SAM                    SamanÃ¡          NA</span></span>
+<span><span class="co">#&gt; 5       18        PP               Puerto Plata 0.018996422</span></span>
+<span><span class="co">#&gt; 6       11        LA              La Altagracia          NA</span></span>
+<span><span class="co">#&gt; 7       07        EP               ElÃ­as PiÃ±a          NA</span></span>
+<span><span class="co">#&gt; 8       10       IND              Independencia          NA</span></span>
+<span><span class="co">#&gt; 9       16       PED                 Pedernales          NA</span></span>
+<span><span class="co">#&gt; 10      03       BAH                    Baoruco          NA</span></span>
+<span><span class="co">#&gt; 11      03       BAH                   Bahoruco          NA</span></span>
+<span><span class="co">#&gt; 12      04       BAR                   Barahona          NA</span></span>
+<span><span class="co">#&gt; 13      26       SRO        Santiago RodrÃ­guez          NA</span></span>
+<span><span class="co">#&gt; 14      27       VAL                   Valverde 0.004422258</span></span>
+<span><span class="co">#&gt; 15      19       HMI           Hermanas Mirabal          NA</span></span>
+<span><span class="co">#&gt; 16      19       SAL                    Salcedo          NA</span></span>
+<span><span class="co">#&gt; 17      24       SRA          SÃ¡nchez RamÃ­rez          NA</span></span>
+<span><span class="co">#&gt; 18      13        LV                    La Vega 0.014144396</span></span>
+<span><span class="co">#&gt; 19      28        MN            MonseÃ±or Nouel          NA</span></span>
+<span><span class="co">#&gt; 20      31       SJO          San JosÃ© de Ocoa          NA</span></span>
+<span><span class="co">#&gt; 21      22        SJ                   San Juan          NA</span></span>
+<span><span class="co">#&gt; 22      22        SJ     San Juan de la Maguana          NA</span></span>
+<span><span class="co">#&gt; 23      02       AZU                       Azua          NA</span></span>
+<span><span class="co">#&gt; 24      25       SAN                   Santiago 0.039947667</span></span>
+<span><span class="co">#&gt; 25      25       SAN Santiago de los Caballeros          NA</span></span>
+<span><span class="co">#&gt; 26      06       DUA                     Duarte 0.008876070</span></span>
+<span><span class="co">#&gt; 27      09       ESP                  Espaillat 0.004489833</span></span>
+<span><span class="co">#&gt; 28      29        MP                Monte Plata          NA</span></span>
+<span><span class="co">#&gt; 29      30       HMA                 Hato Mayor          NA</span></span>
+<span><span class="co">#&gt; 30      12        LR                  La Romana 0.008441885</span></span>
+<span><span class="co">#&gt; 31      23       SPM      San Pedro de MacorÃ­s          NA</span></span>
+<span><span class="co">#&gt; 32      08        ES                   El Seibo          NA</span></span>
+<span><span class="co">#&gt; 33      08        ES                   El Seybo          NA</span></span>
+<span><span class="co">#&gt; 34      01        DN          Distrito Nacional 0.090322521</span></span>
+<span><span class="co">#&gt; 35      05       DAJ                   DajabÃ³n          NA</span></span>
+<span><span class="co">#&gt; 36      32        SD              Santo Domingo 0.098682428</span></span>
+<span><span class="co">#&gt; 37      15        MC               Monte Cristi          NA</span></span></code></pre></div>
+<p>It’s important to note that non-ASCII characters can become corrupted when stored in the package, which may affect the merging of the data sets.</p>
+<blockquote>
+<p>We recommend cleaning any errors before performing the merge. We will soon release another package with functions designed to facilitate this process.</p>
+</blockquote>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">datos</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">percentage</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-6-1.png" width="100%"></p>
+<p>To get the desired graph, just apply the plot function to your data.</p>
+<p>Next, we show how to achieve a similar result using ggplot2. This serves to demonstrate how to create maps with both libraries and to highlight the simplicity of the process by integrating everything in one step.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">DR_PROV</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">sf</span><span class="fu">::</span><span class="fu">st_as_sf</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">left_join</span><span class="op">(</span><span class="va">dr_province</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">left_join</span><span class="op">(</span><span class="va">remesas_provincias</span>, by <span class="op">=</span> <span class="fu">join_by</span><span class="op">(</span><span class="st">'PROV_NAME'</span> <span class="op">==</span> <span class="st">'province'</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">ggplot</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">geom_sf</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span>fill <span class="op">=</span> <span class="va">percentage</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">theme_void</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Joining with `by = join_by(PROV_ID)`</span></span></code></pre></div>
+<p><img src="reference/figures/README-unnamed-chunk-7-1.png" width="100%"></p>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="licencia">
