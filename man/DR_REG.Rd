@@ -3,7 +3,7 @@
 \docType{data}
 \name{DR_REG}
 \alias{DR_REG}
-\title{Development Regions of the Dominican Republic}
+\title{Simple features for the "Development Regions of the Dominican Republic"}
 \format{
 \subsection{\code{DR_REG}}{
 

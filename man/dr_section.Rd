@@ -3,7 +3,7 @@
 \docType{data}
 \name{dr_section}
 \alias{dr_section}
-\title{Sections of the Dominican Republic}
+\title{Metadata for the "Sections of the Dominican Republic"}
 \format{
 \subsection{\code{dr_section}}{
 
