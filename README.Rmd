@@ -61,7 +61,7 @@ The original simple features dataset only includes the PROV_ID variable. Additio
 
 ```{r}
  datos <- DR_PROV_SF |>
-  left_join(remesas_provincias, by = join_by('PROV_NAME' == 'province'))
+  left_join(remittance_by_province, by = join_by('PROV_NAME' == 'province'))
 
 datos %>% 
   sf::st_drop_geometry()
@@ -87,7 +87,7 @@ library(ggplot2)
 DR_PROV %>%
   sf::st_as_sf() %>% 
   left_join(dr_province) %>% 
-  left_join(remesas_provincias, by = join_by('PROV_NAME' == 'province')) %>% 
+  left_join(remittance_by_province, by = join_by('PROV_NAME' == 'province')) %>% 
   ggplot() +
   geom_sf(aes(fill = percentage)) +
   theme_void()

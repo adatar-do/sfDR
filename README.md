@@ -25,6 +25,8 @@ You can install the development version of sfDR from r-universe with:
 if (!require('sfDR')) install.packages('sfDR', repos = c('https://adatar-do.r-universe.dev'))
 if (!require('dplyr')) install.packages('dplyr')
 if (!require('ggplot2')) install.packages('ggplot2')
+#> Loading required package: ggplot2
+#> Warning: package 'ggplot2' was built under R version 4.3.1
 ```
 
 ## Example
@@ -99,7 +101,7 @@ Additional variables are incorporated through the dr_province object.
 
 ``` r
  datos <- DR_PROV_SF |>
-  left_join(remesas_provincias, by = join_by('PROV_NAME' == 'province'))
+  left_join(remittance_by_province, by = join_by('PROV_NAME' == 'province'))
 
 datos %>% 
   sf::st_drop_geometry()
@@ -171,7 +173,7 @@ library(ggplot2)
 DR_PROV %>%
   sf::st_as_sf() %>% 
   left_join(dr_province) %>% 
-  left_join(remesas_provincias, by = join_by('PROV_NAME' == 'province')) %>% 
+  left_join(remittance_by_province, by = join_by('PROV_NAME' == 'province')) %>% 
   ggplot() +
   geom_sf(aes(fill = percentage)) +
   theme_void()
