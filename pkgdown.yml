@@ -2,7 +2,7 @@ pandoc: 2.19.2
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles: {}
-last_built: 2023-12-02T00:17Z
+last_built: 2023-12-02T00:28Z
 urls:
   reference: https://adatar-do.github.io/sfDR/reference
   article: https://adatar-do.github.io/sfDR/articles
