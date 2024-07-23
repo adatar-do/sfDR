@@ -1,0 +1,9 @@
+file: DR_MUN_METADATA.json
+file_size: 7642
+pin_hash: c6cf0c4281a241da
+type: json
+title: 'DR_MUN_METADATA: a pinned 176 x 2 data frame'
+description: ~
+tags: ~
+created: 20240722T223245Z
+api_version: 1

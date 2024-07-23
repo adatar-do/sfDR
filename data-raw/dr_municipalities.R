@@ -178,11 +178,11 @@ dr_municipality <- dplyr::tribble(
   "3207", 	"Pedro Brand"
 )
 
-dr_municipality <- dr_municipality %>%
-  dplyr::mutate(MUN_NAME = iconv(MUN_NAME, from = "latin1", to = "UTF-8"))
+
+board <- pins::board_folder('inst/extdata/')
+pins::pin_write(board, dr_municipality, 'DR_MUN_METADATA', type = 'json')
+
+
 
 DR_MUN <- sf::st_read("data-raw/shapes/RD_MUN_20211130/RD_MUN_20211130.shp", quiet = TRUE) %>%
   dplyr::select(MUN_ID = ENLACE)
-
-usethis::use_data(dr_municipality, DR_MUN, overwrite = TRUE)
-
