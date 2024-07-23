@@ -1,3 +1,5 @@
 .Rproj.user
 docs
 data-raw/shapes
+.Rhistory
+/.quarto/
