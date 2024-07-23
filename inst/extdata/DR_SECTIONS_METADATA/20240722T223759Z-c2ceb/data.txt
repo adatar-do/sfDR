@@ -1,0 +1,9 @@
+file: DR_SECTIONS_METADATA.json
+file_size: 81216
+pin_hash: c2ceb3e8558215ef
+type: json
+title: 'DR_SECTIONS_METADATA: a pinned 1605 x 2 data frame'
+description: ~
+tags: ~
+created: 20240722T223759Z
+api_version: 1
