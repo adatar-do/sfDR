@@ -11,7 +11,10 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+devtools::load_all()
 ```
+
+
 
 # sfDR <a href="https://adatar-do.github.io/sfDR/"><img src="man/figures/logo.png" align="right" height="120" alt="sfDR website" /></a>
 
@@ -23,53 +26,61 @@ knitr::opts_chunk$set(
 
 The goal of sfDR is to provide a comprehensive suite of simple feature (sf) objects for the administrative boundaries of the Dominican Republic, facilitating geospatial analysis and mapping.
 
+
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
+
+ sfDR is designed to be used through the rgisDR package, which provides the same and other functions for working with geographic data of the Dominican Republic in R.
+
+ You can install rgisDR from r-universe with:
+
+```r
+install.packages("rgisDR", repos = c("https://adatar-do.r-universe.dev", "https://cloud.r-project.org"))
+```
+
+You can visit the [rgisDR website](https://adatar-do.github.io/rgisDR/) for more information.
+
+</div>
+
 ## Installation
 
 You can install the development version of sfDR from r-universe with:
 
-```{r}
-if (!require('sfDR')) install.packages('sfDR', repos = c('https://adatar-do.r-universe.dev'))
-if (!require('dplyr')) install.packages('dplyr')
-if (!require('ggplot2')) install.packages('ggplot2')
+```r
+install.packages("sfDR", repos = c("https://adatar-do.r-universe.dev", "https://cloud.r-project.org"))
 ```
 
+
 ## Example
+
 
 This is a basic example showing how to use sfDR to plot a Dominican Republic province map:
 
 ```{r}
 library(sfDR)
-library(dplyr)
 
-DR_PROV_SF <- sf::st_as_sf(DR_PROV)
+DR_PROV_SF <- dr_provinces()
 
 plot(DR_PROV_SF)
 ```
 
-Suppose you have a dataset showing the percentage distribution of remittances received in each province of the Dominican Republic for a specific year. To visualize this data using a graph with sfDR, you first need to combine the metadata with the simple features.
-
-
-```{r}
-DR_PROV_SF <- DR_PROV_SF |>
-  left_join(dr_province, by = join_by(PROV_ID))
-
-DR_PROV_SF %>% 
-  sf::st_drop_geometry()
-```
-
-The original simple features dataset only includes the PROV_ID variable. Additional variables are incorporated through the dr_province object.
+Suppose you have a dataset showing the percentage distribution of remittances received in each province of the Dominican Republic for a specific year. To visualize this data using a graph with sfDR, you first need to combine the remittance data with the province data.
 
 ```{r}
+library(dplyr)
+
  datos <- DR_PROV_SF |>
   left_join(remittance_by_province, by = join_by('PROV_NAME' == 'province'))
 
 datos %>% 
-  sf::st_drop_geometry()
+  sf::st_drop_geometry() %>% 
+  head()
 ```
 
-It's important to note that non-ASCII characters can become corrupted when stored in the package, which may affect the merging of the data sets.
-
-> We recommend cleaning any errors before performing the merge. We will soon release another package with functions designed to facilitate this process.
+To get the desired graph, just apply the plot function to your data.
 
 ```{r}
 datos |>
@@ -77,19 +88,23 @@ datos |>
   plot()
 ```
 
-To get the desired graph, just apply the plot function to your data.
-
-Next, we show how to achieve a similar result using ggplot2. This serves to demonstrate how to create maps with both libraries and to highlight the simplicity of the process by integrating everything in one step.
+Next, we show how to achieve a similar result using ggplot2. This serves to demonstrate how to create maps in both ways and to highlight the simplicity of the process by integrating everything in one step.
 
 ```{r}
 library(ggplot2)
 
-DR_PROV %>%
-  sf::st_as_sf() %>% 
-  left_join(dr_province) %>% 
+dr_provinces() %>%
   left_join(remittance_by_province, by = join_by('PROV_NAME' == 'province')) %>% 
   ggplot() +
   geom_sf(aes(fill = percentage)) +
   theme_void()
 ```
+
+## Code of Conduct
+
+Please note that the sfDR project is released with a [Contributor Code of Conduct](https://adatar-do.github.io/sfDR/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
