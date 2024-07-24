@@ -14,13 +14,16 @@ dr_region <- tibble::tribble(
   "10", "Ozama" , "OZM"
 )
 
+
+
+board <- pins::board_folder('inst/extdata/')
+pins::pin_write(board, dr_region, 'DR_REG_METADATA', type = 'json')
+
+
 DR_REG <- sf::st_read("data-raw/shapes/RD_REG_20211130/RD_REG_20211130.shp", quiet = TRUE)
 
 DR_REG %>%
   dplyr::left_join(dr_region, ., by = c("REG_ID" = "CODREG")) %>%
   sf::st_as_sf() %>%
   dplyr::select(REG_ID) -> DR_REG
-
-
-usethis::use_data(DR_REG, dr_region, overwrite = TRUE)
 

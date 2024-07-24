@@ -1,6 +1,6 @@
 Package: sfDR
 Title: Simple Features for Dominican Republic Administrative Boundaries
-Version: 0.1.5
+Version: 0.2.2
 Authors@R: 
     c(person(given = "Daniel E.",
            family = "de la Rosa",
@@ -16,9 +16,15 @@ Description: The sfDR package provides a comprehensive collection of simple
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 Depends: 
     R (>= 2.10)
 LazyData: true
 LazyDataCompression: xz
 URL: https://adatar-do.github.io/sfDR/
+Imports:
+    dplyr,
+    lifecycle,
+    magrittr,
+    pins,
+    sf

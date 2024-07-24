@@ -4,6 +4,7 @@ library(tidyr)
 source("data-raw/division_territorial/dt_2016.R")
 
 
+
 dt_2016 %>%
   filter(
     municipio != "00",
@@ -30,8 +31,8 @@ DR_DM %>%
 
 DR_DM %>%
   st_drop_geometry() %>%
-  count(ENLACE) %>%
-  arrange(desc(n))
+  count(ENLACE, sort = TRUE) %>%
+  head(10)
 
 DR_DM %>%
   st_drop_geometry() %>%
@@ -52,10 +53,17 @@ dr_municipal_district <- dr_dm %>%
     )
   )
 
-dr_municipal_district <- dr_municipal_district %>%
-  dplyr::mutate(DM_NAME = iconv(DM_NAME, from = "latin1", to = "UTF-8"))
+#DR_MD_METADATA <- dr_municipal_district %>%
+#  dplyr::mutate(DM_NAME = iconv(DM_NAME, from = "latin1", to = "UTF-8"))
 
-DR_DM %>%
-  select(DM_ID = ENLACE) -> DR_DM
+DR_MUNICIPAL_DISTRICTS <- DR_DM %>%
+  select(MD_ID = ENLACE)
 
-usethis::use_data(dr_municipal_district, DR_DM, overwrite = TRUE)
+DR_MD_METADATA <- dr_municipal_district %>%
+  dplyr::rename(
+    MD_ID = DM_ID,
+    MD_NAME = DM_NAME
+  )
+
+board <- pins::board_folder('inst/extdata/')
+pins::pin_write(board, DR_MD_METADATA, 'DR_MD_METADATA', type = 'json')

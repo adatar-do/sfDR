@@ -6,6 +6,7 @@ dr_province <- dplyr::tribble(
   "NA", "_NA_", "00",
   "DN", "Distrito Nacional", "01",
   "AZU", "Azua", "02",
+  "AZU", "Azua de Compostela", "02",
   "BAH", "Baoruco", "03",
   "BAH", "Bahoruco", "03",
   "BAR", "Barahona", "04",
@@ -44,11 +45,12 @@ dr_province <- dplyr::tribble(
 ) %>%
   dplyr::relocate(PROV_ID, PROV_CODE, PROV_NAME)
 
-dr_province <- dr_province %>%
-  dplyr::mutate(PROV_NAME = iconv(PROV_NAME, from = "latin1", to = "UTF-8"))
+
+
+board <- pins::board_folder('inst/extdata/')
+pins::pin_write(board, dr_province, 'DR_PROV_METADATA', type = 'json')
 
 
 DR_PROV <- sf::st_read("data-raw/shapes/RD_PROV_20211130/RD_PROV_20211130.shp", quiet = TRUE)
 DR_PROV <- dplyr::select(DR_PROV, PROV_ID = PROV)
 
-usethis::use_data(dr_province, DR_PROV, overwrite = TRUE)

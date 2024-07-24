@@ -14,31 +14,16 @@ authors:
     - aut
     - cph
 reference:
-- title: Development Regions
-  desc: Functions and datasets for working with development regions in the Dominican
-    Republic.
+- title: Simple features
+  desc: Functions used to return simple features (sf) objects of the Dominican Republic administrative boundaries.
   contents:
-  - DR_REG
-  - dr_region
-- title: Provinces
-  desc: Functions and datasets for handling provinces in the Dominican Republic.
+    - dr_sections
+    - dr_municipal_districts
+    - dr_municipalities
+    - dr_provinces
+    - get_dr_provinces
+    - dr_regions
+- title: Example datasets
+  desc: Datasets provided as examples for working with the sfDR package.
   contents:
-  - DR_PROV
-  - dr_province
-  - remittance_by_province
-- title: Municipalities
-  desc: Functions and datasets for dealing with municipalities in the Dominican Republic.
-  contents:
-  - DR_MUN
-  - dr_municipality
-- title: Municipal Districts
-  desc: Functions and datasets for managing municipal districts in the Dominican Republic.
-  contents:
-  - DR_DM
-  - dr_municipal_district
-- title: Sections
-  desc: Functions and datasets for working with sections in the Dominican Republic.
-  contents:
-  - DR_SEC
-  - dr_section
-
+    - remittance_by_province

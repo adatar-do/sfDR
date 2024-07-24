@@ -17,11 +17,6 @@ dr_sec %>%
   count(SEC_NAME) %>%
   arrange(desc(n))
 
-
-DR_SEC <- sf::st_read("data-raw/shapes/ShapeFilesCenso2010/SECCenso2010.shp")
-
-
-
 dr_sec <- dr_sec %>%
   dplyr::bind_rows(
     dplyr::tribble(
@@ -36,13 +31,15 @@ dr_sec <- dr_sec %>%
     )
   )
 
-dr_section <- dplyr::distinct(dr_sec)
-
-dr_section <- dr_section %>%
-  dplyr::mutate(SEC_NAME = iconv(SEC_NAME, from = "latin1", to = "UTF-8"))
-
-DR_SEC %>%
-  mutate(SEC_ID = stringr::str_c(PROV, MUN, DM, SECC)) %>% select(SEC_ID) -> DR_SEC
 
 
-usethis::use_data(dr_section, DR_SEC, overwrite = TRUE)
+board <- pins::board_folder('inst/extdata/')
+pins::pin_write(board, dr_sec, 'DR_SECTIONS_METADATA', type = 'json')
+
+
+
+DR_SECTIONS <- sf::st_read("data-raw/shapes/ShapeFilesCenso2010/SECCenso2010.shp")
+DR_SECTIONS %>%
+  mutate(SEC_ID = stringr::str_c(PROV, MUN, DM, SECC)) %>% select(SEC_ID) -> DR_SECTIONS
+
+
