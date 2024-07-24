@@ -11,7 +11,7 @@ It also optionally converts the result to an sf object."><meta property="og:imag
 
     <a class="navbar-brand me-2" href="../index.html">sfDR</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Cambiar la navegación">
@@ -42,7 +42,7 @@ It also optionally converts the result to an <code>sf</code> object.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Uso<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">dr_provinces</span><span class="op">(</span>.sf <span class="op">=</span> <span class="cn">TRUE</span>, .reg <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">dr_provinces</span><span class="op">(</span>.sf <span class="op">=</span> <span class="cn">TRUE</span>, .reg <span class="op">=</span> <span class="cn">FALSE</span>, .uniques <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -86,6 +86,11 @@ It also optionally converts the result to an <code>sf</code> object.</p>
 <dt id="arg--reg">.reg<a class="anchor" aria-label="anchor" href="#arg--reg"></a></dt>
 <dd><p>Logical; if FALSE, removes columns related to regions. Defaults to FALSE.</p></dd>
 
+
+<dt id="arg--uniques">.uniques<a class="anchor" aria-label="anchor" href="#arg--uniques"></a></dt>
+<dd><p>Logical; if TRUE, removes some duplicated IDs inserted to consider
+territories names changes over time. Defaults to TRUE.</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="valor">Valor<a class="anchor" aria-label="anchor" href="#valor"></a></h2>
@@ -95,9 +100,9 @@ It also optionally converts the result to an <code>sf</code> object.</p>
     <div class="section level2">
     <h2 id="ref-examples">Ejemplos<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
-<span class="r-in"><span>  <span class="co"># Load and process the data as sf object</span></span></span>
-<span class="r-in"><span>  <span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">dr_provinces</span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">result</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># Load and process the data as sf object</span></span></span>
+<span class="r-in"><span><span class="va">result</span> <span class="op">&lt;-</span> <span class="fu">dr_provinces</span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">result</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
