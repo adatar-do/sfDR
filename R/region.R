@@ -5,6 +5,8 @@
 #' and adds metadata. It also optionally converts the result to an `sf` object.
 #'
 #' @param .sf Logical; if TRUE, converts the result to an `sf` object. Defaults to TRUE.
+#' @param .uniques Logical; if TRUE, removes some duplicated IDs inserted to consider
+#'  territories names changes over time. Defaults to TRUE.
 #'
 #' @return A data frame or `sf` object (if .sf is TRUE) with the loaded and processed data.
 #' @export
@@ -23,24 +25,28 @@
 #'
 #' @examples
 #' \dontrun{
-#'   # Load and process the data as sf object
-#'   result <- dr_regions()
-#'   print(result)
+#' # Load and process the data as sf object
+#' result <- dr_regions()
+#' print(result)
 #' }
 #'
-dr_regions <- function(.sf = TRUE) {
+dr_regions <- function(.sf = TRUE, .uniques = TRUE) {
   REG_ID <- NULL
   geometry <- NULL
 
+  metadata <- pins::pin_read(
+    pins::board_folder(system.file("extdata", package = "sfDR")),
+    "DR_REG_METADATA"
+  )
+
+  if (.uniques) {
+    metadata <- metadata %>%
+      dplyr::distinct(REG_ID, .keep_all = T)
+  }
+
   drr <- DR_REG %>%
-    dplyr::left_join(
-      pins::pin_read(
-        pins::board_folder(system.file("extdata", package = "sfDR")),
-        "DR_REG_METADATA"
-      ) %>%
-        dplyr::distinct(REG_ID, .keep_all = T),
-      by = dplyr::join_by(REG_ID)
-    ) %>%
+    sf::st_as_sf() %>%
+    dplyr::left_join(metadata, by = dplyr::join_by(REG_ID)) %>%
     dplyr::relocate(geometry, .after = dplyr::last_col())
 
   if (!.sf) {
@@ -50,4 +56,3 @@ dr_regions <- function(.sf = TRUE) {
 
   drr
 }
-

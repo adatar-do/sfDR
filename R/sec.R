@@ -10,6 +10,8 @@
 #' @param .mun Logical; if FALSE, removes columns related to municipalities. Defaults to FALSE.
 #' @param .prov Logical; if FALSE, removes columns related to provinces. Defaults to FALSE.
 #' @param .reg Logical; if FALSE, removes columns related to regions. Defaults to FALSE.
+#' @param .uniques Logical; if TRUE, removes some duplicated IDs inserted to consider
+#'  territories names changes over time. Defaults to TRUE.
 #'
 #' @return A data frame or `sf` object (if .sf is TRUE) with the loaded and processed data.
 #' @export
@@ -37,46 +39,50 @@
 #'
 #' @examples
 #' \dontrun{
-#'   # Load and process the data as sf object
-#'   result <- dr_sections(TRUE, TRUE, TRUE, TRUE, TRUE)
-#'   print(result)
+#' # Load and process the data as sf object
+#' result <- dr_sections(TRUE, TRUE, TRUE, TRUE, TRUE)
+#' print(result)
 #' }
 #'
-dr_sections <- function(.sf = TRUE, .dm = FALSE, .mun = FALSE, .prov = FALSE, .reg = FALSE){
+dr_sections <- function(.sf = TRUE, .dm = FALSE, .mun = FALSE, .prov = FALSE, .reg = FALSE, .uniques = TRUE) {
   SEC_ID <- NULL
 
+  metadata <- pins::pin_read(
+    pins::board_folder(system.file("extdata", package = "sfDR")),
+    "DR_SECTIONS_METADATA"
+  )
+
+  if (.uniques) {
+    metadata <- metadata %>%
+      dplyr::distinct(SEC_ID, .keep_all = T)
+  }
+
   drs <- DR_SECTIONS %>%
-    dplyr::left_join(
-      pins::pin_read(
-        pins::board_folder(system.file('extdata', package = 'sfDR')),
-        'DR_SECTIONS_METADATA'
-      ) %>%
-        dplyr::distinct(SEC_ID, .keep_all = T),
-      by = dplyr::join_by(SEC_ID)
-    ) %>%
+    sf::st_as_sf() %>%
+    dplyr::left_join(metadata, by = dplyr::join_by(SEC_ID)) %>%
     .add_dm(.mun, .prov, .reg)
 
-  if(!.dm){
+  if (!.dm) {
     drs <- drs %>%
       dplyr::select(-dplyr::starts_with("MD"))
   }
 
-  if(!.mun){
+  if (!.mun) {
     drs <- drs %>%
       dplyr::select(-dplyr::starts_with("MUN"))
   }
 
-  if(!.prov){
+  if (!.prov) {
     drs <- drs %>%
       dplyr::select(-dplyr::starts_with("PROV"))
   }
 
-  if(!.reg){
+  if (!.reg) {
     drs <- drs %>%
       dplyr::select(-dplyr::starts_with("REG"))
   }
 
-  if(!.sf){
+  if (!.sf) {
     drs <- drs %>%
       sf::st_drop_geometry()
   }
@@ -86,7 +92,7 @@ dr_sections <- function(.sf = TRUE, .dm = FALSE, .mun = FALSE, .prov = FALSE, .r
 
 
 
-.add_dm <- function(drsec, .mun = FALSE, .prov = FALSE, .reg = FALSE){
+.add_dm <- function(drsec, .mun = FALSE, .prov = FALSE, .reg = FALSE) {
   SEC_ID <- NULL
 
   drsec %>%
@@ -96,6 +102,3 @@ dr_sections <- function(.sf = TRUE, .dm = FALSE, .mun = FALSE, .prov = FALSE, .r
       by = "MD_ID"
     )
 }
-
-
-

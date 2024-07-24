@@ -8,6 +8,8 @@
 #' @param .sf Logical; if TRUE, converts the result to an `sf` object. Defaults to TRUE.
 #' @param .prov Logical; if FALSE, removes columns related to provinces. Defaults to FALSE.
 #' @param .reg Logical; if FALSE, removes columns related to regions. Defaults to FALSE.
+#' @param .uniques Logical; if TRUE, removes some duplicated IDs inserted to consider
+#'  territories names changes over time. Defaults to TRUE.
 #'
 #' @return A data frame or `sf` object (if .sf is TRUE) with the loaded and processed data.
 #' @export
@@ -31,34 +33,38 @@
 #'
 #' @examples
 #' \dontrun{
-#'   # Load and process the data as sf object
-#'   result <- dr_municipalities(TRUE, TRUE, TRUE)
-#'   print(result)
+#' # Load and process the data as sf object
+#' result <- dr_municipalities(TRUE, TRUE, TRUE)
+#' print(result)
 #' }
 #'
-dr_municipalities <- function(.sf = TRUE, .prov = FALSE, .reg = FALSE){
+dr_municipalities <- function(.sf = TRUE, .prov = FALSE, .reg = FALSE, .uniques = TRUE) {
   MUN_ID <- NULL
 
+  metadata <- pins::pin_read(
+    pins::board_folder(system.file("extdata", package = "sfDR")),
+    "DR_MUN_METADATA"
+  )
+
+  if (.uniques) {
+    metadata <- metadata %>%
+      dplyr::distinct(MUN_ID, .keep_all = T)
+  }
+
   drm <- DR_MUN %>%
-    dplyr::left_join(
-      pins::pin_read(
-        pins::board_folder(system.file('extdata', package = 'sfDR')),
-        'DR_MUN_METADATA'
-      ) %>%
-        dplyr::distinct(MUN_ID, .keep_all = T),
-      by = dplyr::join_by(MUN_ID)
-    ) %>%
+    sf::st_as_sf() %>%
+    dplyr::left_join(metadata, by = dplyr::join_by(MUN_ID)) %>%
     .add_prov(.reg)
 
-  if(!.prov){
+  if (!.prov) {
     drm <- drm %>%
       dplyr::select(-dplyr::starts_with("PROV"))
   }
-  if(!.reg){
+  if (!.reg) {
     drm <- drm %>%
       dplyr::select(-dplyr::starts_with("REG"))
   }
-  if(!.sf){
+  if (!.sf) {
     drm <- drm %>%
       sf::st_drop_geometry()
   }
@@ -67,7 +73,7 @@ dr_municipalities <- function(.sf = TRUE, .prov = FALSE, .reg = FALSE){
 
 
 
-.add_prov <- function(drm, .reg = FALSE){
+.add_prov <- function(drm, .reg = FALSE) {
   MUN_ID <- NULL
 
   drm %>%

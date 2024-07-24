@@ -22,12 +22,15 @@ A simple features collection with 32 features and 6 fields:
 \url{https://www.one.gob.do/publicaciones/2021/division-territorial-2021/}
 }
 \usage{
-dr_provinces(.sf = TRUE, .reg = FALSE)
+dr_provinces(.sf = TRUE, .reg = FALSE, .uniques = TRUE)
 }
 \arguments{
 \item{.sf}{Logical; if TRUE, converts the result to an \code{sf} object. Defaults to TRUE.}
 
 \item{.reg}{Logical; if FALSE, removes columns related to regions. Defaults to FALSE.}
+
+\item{.uniques}{Logical; if TRUE, removes some duplicated IDs inserted to consider
+territories names changes over time. Defaults to TRUE.}
 }
 \value{
 A data frame or \code{sf} object (if .sf is TRUE) with the loaded and processed data.
@@ -39,9 +42,9 @@ It also optionally converts the result to an \code{sf} object.
 }
 \examples{
 \dontrun{
-  # Load and process the data as sf object
-  result <- dr_provinces(TRUE, TRUE)
-  print(result)
+# Load and process the data as sf object
+result <- dr_provinces(TRUE, TRUE)
+print(result)
 }
 
 }

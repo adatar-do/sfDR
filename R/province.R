@@ -7,6 +7,8 @@
 #'
 #' @param .sf Logical; if TRUE, converts the result to an `sf` object. Defaults to TRUE.
 #' @param .reg Logical; if FALSE, removes columns related to regions. Defaults to FALSE.
+#' @param .uniques Logical; if TRUE, removes some duplicated IDs inserted to consider
+#'  territories names changes over time. Defaults to TRUE.
 #'
 #' @return A data frame or `sf` object (if .sf is TRUE) with the loaded and processed data.
 #' @export
@@ -28,30 +30,34 @@
 #'
 #' @examples
 #' \dontrun{
-#'   # Load and process the data as sf object
-#'   result <- dr_provinces(TRUE, TRUE)
-#'   print(result)
+#' # Load and process the data as sf object
+#' result <- dr_provinces(TRUE, TRUE)
+#' print(result)
 #' }
 #'
-dr_provinces <- function(.sf = TRUE, .reg = FALSE){
+dr_provinces <- function(.sf = TRUE, .reg = FALSE, .uniques = TRUE) {
   PROV_ID <- NULL
 
+  metadata <- pins::pin_read(
+    pins::board_folder(system.file("extdata", package = "sfDR")),
+    "DR_PROV_METADATA"
+  )
+
+  if (.uniques) {
+    metadata <- metadata %>%
+      dplyr::distinct(PROV_ID, .keep_all = T)
+  }
+
   drp <- DR_PROV %>%
-    dplyr::left_join(
-      pins::pin_read(
-        pins::board_folder(system.file('extdata', package = 'sfDR')),
-        'DR_PROV_METADATA'
-      ) %>%
-        dplyr::distinct(PROV_ID, .keep_all = T),
-      by = dplyr::join_by(PROV_ID)
-    ) %>%
+    sf::st_as_sf() %>%
+    dplyr::left_join(metadata, by = dplyr::join_by(PROV_ID)) %>%
     .add_reg()
 
-  if(!.reg){
+  if (!.reg) {
     drp <- drp %>%
       dplyr::select(-dplyr::starts_with("REG"))
   }
-  if(!.sf){
+  if (!.sf) {
     drp <- drp %>%
       sf::st_drop_geometry()
   }
@@ -60,20 +66,20 @@ dr_provinces <- function(.sf = TRUE, .reg = FALSE){
 
 
 
-.add_reg <- function(drp){
-  drp = drp %>%
+.add_reg <- function(drp) {
+  drp <- drp %>%
     dplyr::mutate(
       REG_ID = dplyr::case_when(
-        as.numeric(PROV_ID) %in% c(25, 18, 9) ~ '01',
-        as.numeric(PROV_ID) %in% c(13, 24, 28) ~ '02',
-        as.numeric(PROV_ID) %in% c(6, 19, 14, 20) ~ '03',
-        as.numeric(PROV_ID) %in% c(27, 15, 5, 26) ~ '04',
-        as.numeric(PROV_ID) %in% c(21, 2, 17, 31) ~ '05',
-        as.numeric(PROV_ID) %in% c(4, 3, 16, 10) ~ '06',
-        as.numeric(PROV_ID) %in% c(22, 7) ~ '07',
-        as.numeric(PROV_ID) %in% c(12, 11, 8) ~ '08',
-        as.numeric(PROV_ID) %in% c(23, 30, 29) ~ '09',
-        as.numeric(PROV_ID) %in% c(1, 32) ~ '10'
+        as.numeric(PROV_ID) %in% c(25, 18, 9) ~ "01",
+        as.numeric(PROV_ID) %in% c(13, 24, 28) ~ "02",
+        as.numeric(PROV_ID) %in% c(6, 19, 14, 20) ~ "03",
+        as.numeric(PROV_ID) %in% c(27, 15, 5, 26) ~ "04",
+        as.numeric(PROV_ID) %in% c(21, 2, 17, 31) ~ "05",
+        as.numeric(PROV_ID) %in% c(4, 3, 16, 10) ~ "06",
+        as.numeric(PROV_ID) %in% c(22, 7) ~ "07",
+        as.numeric(PROV_ID) %in% c(12, 11, 8) ~ "08",
+        as.numeric(PROV_ID) %in% c(23, 30, 29) ~ "09",
+        as.numeric(PROV_ID) %in% c(1, 32) ~ "10"
       )
     ) %>%
     dplyr::left_join(
@@ -90,9 +96,7 @@ dr_provinces <- function(.sf = TRUE, .reg = FALSE){
 #'
 #' @param ... Arguments to pass to `dr_provinces()`.
 #' @export
-get_dr_provinces <- function(...){
+get_dr_provinces <- function(...) {
   lifecycle::deprecate_warn("0.1.0", "get_dr_provinces()", "dr_provinces()")
   dr_provinces(...)
 }
-
-

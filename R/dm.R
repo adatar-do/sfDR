@@ -9,6 +9,8 @@
 #' @param .mun Logical; if FALSE, removes columns related to municipalities. Defaults to FALSE.
 #' @param .prov Logical; if FALSE, removes columns related to provinces. Defaults to FALSE.
 #' @param .reg Logical; if FALSE, removes columns related to regions. Defaults to FALSE.
+#' @param .uniques Logical; if TRUE, removes some duplicated IDs inserted to consider
+#'  territories names changes over time. Defaults to TRUE.
 #'
 #' @return A data frame or `sf` object (if .sf is TRUE) with the loaded and processed data.
 #' @export
@@ -34,23 +36,27 @@
 #'
 #' @examples
 #' \dontrun{
-#'   # Load and process the data as sf object
-#'   result <- dr_municipal_districts(TRUE, TRUE, TRUE, TRUE)
-#'   print(result)
+#' # Load and process the data as sf object
+#' result <- dr_municipal_districts(TRUE, TRUE, TRUE, TRUE)
+#' print(result)
 #' }
 #'
-dr_municipal_districts <- function(.sf = TRUE, .mun = FALSE, .prov = FALSE, .reg = FALSE) {
+dr_municipal_districts <- function(.sf = TRUE, .mun = FALSE, .prov = FALSE, .reg = FALSE, .uniques = TRUE) {
   MD_ID <- NULL
 
+  metadata <- pins::pin_read(
+    pins::board_folder(system.file("extdata", package = "sfDR")),
+    "DR_MD_METADATA"
+  )
+
+  if (.uniques) {
+    metadata <- metadata %>%
+      dplyr::distinct(MD_ID, .keep_all = T)
+  }
+
   drmd <- DR_MUNICIPAL_DISTRICTS %>%
-    dplyr::left_join(
-      pins::pin_read(
-        pins::board_folder(system.file("extdata", package = "sfDR")),
-        "DR_MD_METADATA"
-      ) %>%
-        dplyr::distinct(MD_ID, .keep_all = T),
-      by = dplyr::join_by(MD_ID)
-    ) %>%
+    sf::st_as_sf() %>%
+    dplyr::left_join(metadata, by = dplyr::join_by(MD_ID)) %>%
     .add_mun(.prov, .reg)
 
   if (!.mun) {

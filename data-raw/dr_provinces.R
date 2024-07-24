@@ -6,6 +6,7 @@ dr_province <- dplyr::tribble(
   "NA", "_NA_", "00",
   "DN", "Distrito Nacional", "01",
   "AZU", "Azua", "02",
+  "AZU", "Azua de Compostela", "02",
   "BAH", "Baoruco", "03",
   "BAH", "Bahoruco", "03",
   "BAR", "Barahona", "04",
