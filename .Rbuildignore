@@ -1,3 +1,5 @@
+^renv$
+^renv\.lock$
 ^sfDR\.Rproj$
 ^\.Rproj\.user$
 ^data-raw$

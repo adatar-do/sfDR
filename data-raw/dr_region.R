@@ -7,8 +7,8 @@ dr_region <- tibble::tribble(
   "03", "Cibao Nordeste", "CND",
   "04", "Cibao Noroeste", "CNO",
   "05", "Valdesia", "VAL",
-  "06", "El Valle", "EVA",
-  "07", "Enriquillo", "ENR",
+  "06", "Enriquillo", "ENR",
+  "07", "El Valle", "EVA",
   "08", "Del Yuma", "YUM",
   "09", "Higuamo", "HIG",
   "10", "Ozama" , "OZM"
