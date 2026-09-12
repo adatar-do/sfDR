@@ -11,6 +11,7 @@ Dominican Republic in R.
 You can install rgisDR from r-universe with:
 
 ``` r
+
 install.packages("rgisDR", repos = c("https://adatar-do.r-universe.dev", "https://cloud.r-project.org"))
 ```
 
@@ -22,6 +23,7 @@ for more information.
 You can install the development version of sfDR from r-universe with:
 
 ``` r
+
 install.packages("sfDR", repos = c("https://adatar-do.r-universe.dev", "https://cloud.r-project.org"))
 ```
 
@@ -31,6 +33,7 @@ This is a basic example showing how to use sfDR to plot a Dominican
 Republic province map:
 
 ``` r
+
 library(sfDR)
 
 DR_PROV_SF <- dr_provinces()
@@ -46,6 +49,7 @@ specific year. To visualize this data using a graph with sfDR, you first
 need to combine the remittance data with the province data.
 
 ``` r
+
 library(dplyr)
 #> 
 #> Attaching package: 'dplyr'
@@ -74,6 +78,7 @@ datos %>%
 To get the desired graph, just apply the plot function to your data.
 
 ``` r
+
 datos |>
   select(percentage) %>% 
   plot()
@@ -86,6 +91,7 @@ to demonstrate how to create maps in both ways and to highlight the
 simplicity of the process by integrating everything in one step.
 
 ``` r
+
 library(ggplot2)
 #> Warning: package 'ggplot2' was built under R version 4.3.1
 
